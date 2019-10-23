@@ -65,6 +65,28 @@ body {
      .btn svg{
           height: 2.25rem;
           width: 2.25rem;}
+.btn-inline {
+     color: #F59a83;
+     font-size: 1.2rem;
+     border: none;
+     padding: .8rem 1.2rem;
+     border-radius: 10rem;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     transition: all .2s;}
+     .btn-inline svg{
+          height: 1.5rem;
+          width: 1.5rem;
+          fill: currentColor;
+          margin: 0 .2rem;}
+     .btn-inline span {
+          margin: 0 .4rem;}
+     .btn-inline:hover {
+          color: #F48982;
+          background-color: #f2efee;}
+     .btn-inline:focus {
+          outline: none;}
 
 
 
@@ -101,6 +123,8 @@ body {
           outline: none;}
      .search__field::placeholder{
           color: #dad0cc;}
+
+/******Heart Icon**********************/
 .likes {
      position: relative;
      align-self: stretch;            
@@ -135,25 +159,33 @@ body {
           opacity: 0;
           transition: all .5s .2s;}
 
-/***************Like and Results***************/
+/***************Links in Like Button and Links in Results***************/
+
+.results,
 .likes{
+     border: 1px solid black;
      padding: 3rem 0;}
-     .likes__list {
+     .likes__list,
+     .results__list {
           list-style: none;}
      .likes__link:link,
-     .likes__link:visited{
+     .likes__link:visited,
+     .results__link:link,
+     .results__link:visited{
           display: flex;
           align-items: center;
           padding: 1.5rem 3rem;
           transition: all .3s;
           border-right: 1px solid #fff;
           text-decoration: none;}
-     .likes__link:hover {
+     .likes__link:hover,
+     .results__link:hover {
           background-color: #f9f5f3;}
      .results__link--active,
      .likes__link--active{
           background-color: #f9f5f3;}
-     .likes__fig {
+     .likes__fig,
+     .results__fig {
           flex: 0 0 5.5rem;
           border-radius: 50%;
           overflow: hidden;
@@ -161,6 +193,7 @@ body {
           margin-right: 2rem;
           position: relative;
           backface-visibility: hidden;}
+     .results__fig::before,
      .likes__fig::before{
           content: '';
           display: block;
@@ -172,21 +205,35 @@ body {
           background-image: linear-gradient(to right bottom, #FBDB89, #F48982);
           opacity: .4;
      }
+     .results__fig img,
      .likes__fig img {
           display: block;
           width: 100%;
           height: 100%;
           object-fit: cover;
           transition: all 0.3s;}
+     .results__name,
      .likes__name {
           font-size: 1.3rem;
           color: #F59a83;
           text-transform: uppercase;
           font-weight: 600;}
+     .results__author,
      .likes__author {
           font-size: 1.1rem;
           color: #968b87;
           text-transform: uppercase;
           font-weight: 600;}
-
+     .results__pages {
+          margin-top: 3rem;
+          padding: 0 3rem;}
+     .results__pages::after {
+          content: '';
+          display: table;
+          clear: both;}
+     .results__btn--prev {
+          float:left;
+          flex-direction: row-reverse;}
+     .results__btn--next {
+          float: right;}
 
