@@ -2,13 +2,15 @@
   margin: 0;
   padding: 0;
 }
+*,
 *::before,
 *::after {
-  box-sizing: initial;
+  box-sizing: inherit;
 }
 ::-webkit-scrollbar
 {
-	width: 10px;
+     width: 5px;
+     height: 4px;
 	background-color: #F5F5F5;
 }
  
@@ -291,7 +293,8 @@ body {
           font-size: 1.3rem;
           color: #F59a83;
           text-transform: uppercase;
-          font-weight: 600;}
+          font-weight: 600;
+          margin-bottom: .3rem;}
      .results__author,
      .likes__author {
           font-size: 1.1rem;
@@ -448,12 +451,10 @@ body {
           font-weight: 700;}
      
 .shopping {
-     padding: 3rem 4rem;
-         
+     padding: 3rem 4rem;         
      display: flex;
      flex-direction: column;}
-     .shopping__list {
-          padding: 2rem 2rem;
+     .shopping__list {                
           list-style: none;          
           max-height: 77rem;
           overflow: scroll;}
@@ -465,8 +466,8 @@ body {
           position: relative;}
      .shopping__count {
           flex: 0 0 7.5rem;
-          border: 1px solid #f2efee;
           padding: .4rem .5rem;
+          border: 1px solid #f2efee;          
           border-radius: 3px;
           margin-right: 2rem;
           cursor: pointer;
