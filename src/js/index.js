@@ -1,6 +1,9 @@
 import Search from './model/Search';
+import Recipe from './model/Recipe'
 import {elements, renderLoader, clearLoader} from './view/base';
 import * as searchView from './view/searchView';
+import * as recipeView from './view/recipeView';
+
 
 /****Global State of the app
  * --Search Object
@@ -10,6 +13,8 @@ import * as searchView from './view/searchView';
  *
  */
 const state = {}; //Each time page reload state is empty
+
+window.state = state;
 
 /****************************************** */
 /*********Search Controller*************** */
@@ -21,20 +26,18 @@ const controlSearch = async () => {
    if (query) {
       //2) New search object and add to state
       state.search = new Search(query);
-      //4) Use Ajax loader and prepare UI
+      //3) Use Ajax loader and prepare UI
       searchView.clearInput();
       searchView.clearResults();
       renderLoader(elements.results__list);
 
       
-      //3) Search for recipes
-      await state.search.getResults();
-      
+      //4) Search for recipes
+      await state.search.getResults();      
 
 
       //5) Render results on UI
-      clearLoader();
-      console.log(state.search.result);
+      clearLoader();      
       searchView.renderResults(state.search.result)
       
    }
@@ -63,7 +66,33 @@ elements.results__pages.addEventListener('click', event => {
 
 const controlRecipe = async () => {
    //Getting recipe ID from URL
-   const id = window.location.hash.replace('#', '');
+   const recipe_id = window.location.hash.replace('#', '');
+
+   if(recipe_id) {
+
+   //1. Prepare the UI, add AJAX Loader
+   recipeView.clearRecipe();
+   renderLoader(elements.recipe);
+
+   //2. Highlight selected search item
+   if(state.search) searchView.highlighSelected(recipe_id);
+
+   //3. Create new recipe object
+   state.recipe = new Recipe(recipe_id);
+
+   //4. Get recipes data and parse ingredients
+   await state.recipe.getRecipe();
+   state.recipe.parseIngredients();
+
+   //5. Calculate the servings and time
+   state.recipe.calcTime();
+   state.recipe.calcServings();
+
+   //6. Render recipe 
+   clearLoader();
+   }
+
+
    
 }
 

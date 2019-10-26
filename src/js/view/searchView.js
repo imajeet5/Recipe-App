@@ -92,3 +92,14 @@ export const renderResults = (results, pageNumber = 1, resultsPerPage = 10) => {
      //Render Pagination Buttons
      renderButtons(pageNumber, results.length, resultsPerPage);
 }
+
+export const highlighSelected = id => {
+     //Removing the previous highlighted element
+     //We cannot keep this querySelector in the elements bcz it is not on page when the page loads. 
+     const resultsArr = Array.from(document.querySelectorAll('.results__link'));  
+     resultsArr.forEach(el => {
+          el.classList.remove('results__link--active');
+          
+     });
+     document.querySelector(`.results__link[href*="${id}"]`).classList.add('results__link--active');
+}
