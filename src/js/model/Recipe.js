@@ -45,8 +45,7 @@ export default class Recipe {
               const arrIng = ingredient.split(' ');
               
                     //3.1 Separating the unit from the ingredients
-               const unitIndex = arrIng.findIndex(element => allUnits.includes(element));
-               console.log(unitIndex);
+               const unitIndex = arrIng.findIndex(element => allUnits.includes(element));     
 
                let ingredientObject; 
                if(unitIndex > -1) {
@@ -91,7 +90,28 @@ export default class Recipe {
           this.time = periods * 15;
      }
      calcServings() {
-          this.servings = 4;
+          this.servings = 4; 
+     }
+
+     updateServings(type) {
+          var temp;
+          
+         var round =  function (value, decimals) {
+               return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+          }
+
+          //Updating Servings
+
+          const newServings = type === 'dec' ? this.servings - 1 : this.servings + 1;
+
+          //Updating ingredients Count
+          this.ingredients.forEach(el => {
+               temp = el.count * (newServings / this.servings);
+               temp = round(temp, 1);
+               el.count = temp;
+          });
+
+          this.servings = newServings;
      }
      
 }
