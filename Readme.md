@@ -1,1 +1,17 @@
-Technology Used: HTML, CSS, JS. This app makes AJAX calls to food2fork, using the API key that we get from there. This will fetch a list of 30 recipes from the user query. User can like a recipe, add to like list, which will be there even after user refresh the page. User can add the ingredients from the different recipes to the shopping list.
+  # Recipe-App 
+  
+Build using VanillaJs, this project uses food2fork API, make AJAX calls using 'axios' to fetch the data according to the user requirement. <br>
+Some of the functionalities of this app are - <br>
+   -formatting the data that we get from API <br>
+   -paging buttons <br>
+   -paging buttons <br>
+   -add to shopping list <br>
+   -add to like list <br>
+   -local storage of like list data <br>
+   -clearing shopping list <br> 
+    and others minor things. <br>
+ 
+ Grid and flexbox layout are used for CSS.<br>
+ Live Site: amazing-recipes.netlify.com
+ 
+   
