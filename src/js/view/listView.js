@@ -20,7 +20,20 @@ export const renderList = shoppingList => {
 
    const markup = shoppingList.map(el => renderItem(el.id, el.count, el.unit, el.name)).join('');
 
+   const deleteList = `
+   <button class="btn-small recipe__btn" id="deleteList">
+   <svg class="search__icon">
+        <use href="img/icons.svg#icon-shopping-cart"></use>
+   </svg>
+   <span>Clear Shopping List</span>
+</button>`
+
    elements.shopping__list.insertAdjacentHTML('afterbegin', markup);
+   if(document.getElementById("deleteList")){
+    //    
+   }else {
+   elements.shopping__list.insertAdjacentHTML('afterend', deleteList);
+   }
 };
 
 export const deleteItem = id => {

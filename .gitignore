@@ -1,6 +1,6 @@
 /refrence
 /src/img
-/dist
+/dist/js
 node_modules
 .eslintrc.js
 webpack.config.js
