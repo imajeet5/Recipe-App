@@ -156,9 +156,8 @@ const controlList = () => {
       } else {
          state.list.addToList(state.recipe.ingredients);
       }
-   } catch (error) {
-      console.log(error);
-      console.log('Shopping Count not defined');
+   } catch (error) {      
+      console.log("What's up man! Having fun");
       state.list.addToList(state.recipe.ingredients);   }
 
    //Render Shopping List to UI
@@ -174,6 +173,7 @@ elements.shopping__area.addEventListener('click', event => {
       elements.shopping__list.innerHTML = '';
       listView.showClearList('hidden');
    }else {
+      try{
    const id = event.target.closest('.shopping__item').dataset.itemid;   
 
    if (event.target.matches('.shopping__delete, .shopping__delete *')) {      
@@ -188,6 +188,10 @@ elements.shopping__area.addEventListener('click', event => {
       const val = parseFloat(event.target.value, 10);
         state.list.updateCount(id, val);
    }
+}catch (error){
+   console.log("Chill Dude");
+}
+
 }
 });
 
