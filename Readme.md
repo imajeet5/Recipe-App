@@ -6,8 +6,7 @@
   
 Build using VanillaJs, this project uses food2fork API, make AJAX calls using 'axios' to fetch the data according to the user requirement. <br>
 Some of the functionalities of this app are - <br>
-   -formatting the data that we get from API <br>
-   -paging buttons <br>
+   -formatting the data that we get from API <br>   
    -paging buttons <br>
    -add to shopping list <br>
    -add to like list <br>
