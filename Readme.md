@@ -16,7 +16,7 @@ Some of the functionalities of this app are - <br>
  
  Grid and flexbox layout are used for CSS.<br>
  <br>
- Note: Food2Fork API is limited upto 50 calls/day, I have given my API key for demo, which can be used by entering 1 , 2 or 3. Or you can sign up at food2fork and enter your own API key when prompted. 
+ Note: Food2Fork API is limited upto 50 calls/day, I have given my API keys for demo, which can be used by entering 1 , 2 or 3. Or you can sign up at food2fork and enter your own API key when prompted. 
  
  
    
