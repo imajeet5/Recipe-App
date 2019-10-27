@@ -12,6 +12,7 @@ Some of the functionalities of this app are - <br>
     and others minor things. <br>
  
  Grid and flexbox layout are used for CSS.<br>
- Live Site: amazing-recipes.netlify.com
+ Live Site: <br>
+ https://amazing-recipes.netlify.com
  
    
