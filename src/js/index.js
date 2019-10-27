@@ -44,7 +44,8 @@ const controlSearch = async () => {
             alert('Recipe Not Found');
             clearLoader();
          }
-      } catch (error) {                        
+      } catch (error) {  
+         alert("Search result not fetched | Enter a different API");                      
          clearLoader();         
 
          
@@ -162,11 +163,17 @@ const controlList = () => {
 
    //Render Shopping List to UI
    listView.renderList(state.list.shoppingList);
+   listView.showClearList('visible');
 };
 
-//Handling delete and update list item event in shopping list
+//Handling delete and update list item event in shopping list-- Event listener for shopping
 
-elements.shopping__list.addEventListener('click', event => {
+elements.shopping__area.addEventListener('click', event => {
+   if(event.target.matches('.delList, .delList *')){
+      state.list.shoppingList = [];
+      elements.shopping__list.innerHTML = '';
+      listView.showClearList('hidden');
+   }else {
    const id = event.target.closest('.shopping__item').dataset.itemid;   
 
    if (event.target.matches('.shopping__delete, .shopping__delete *')) {      
@@ -181,8 +188,8 @@ elements.shopping__list.addEventListener('click', event => {
       const val = parseFloat(event.target.value, 10);
         state.list.updateCount(id, val);
    }
+}
 });
-
 
 
 /************************************ */

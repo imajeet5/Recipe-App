@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,23 +10,24 @@
      <link rel="stylesheet" href="css/style.css">
      <title>Forkify | Search over 1,000,000 recipes</title>
 </head>
+
 <body>
      <div class="container">
           <header class="header">
                <img src="./img/logo.png" alt="logo" class="header__logo">
                <form class="search">
                     <input type="text" class="search__field" placeholder="Search over 1,000,000 recipes...">
-                    <button class="btn search__btn" >
+                    <button class="btn search__btn">
                          <svg class="search__icon">
                               <use href="img/icons.svg#icon-magnifying-glass"></use>
                          </svg>
-                         <span>Search</span>                  
+                         <span>Search</span>
                     </button>
                </form>
                <div class="likes">
-                    <div class="likes__field">                   
+                    <div class="likes__field">
                          <svg class="likes__icon">
-                         <use href="./img/icons.svg#icon-heart"></use>
+                              <use href="./img/icons.svg#icon-heart"></use>
                          </svg>
                     </div>
                     <div class="likes__panel">
@@ -173,7 +175,7 @@
                     </li> -->
                </ul>
                <div class="results__pages">
-                      
+
                     <!-- <button class="btn-inline results__btn--prev"> 
                          <svg class="search__icon">
                               <use href="img/icons.svg#icon-triangle-left"></use>
@@ -186,11 +188,11 @@
                               <use href="img/icons.svg#icon-triangle-right"></use>
                          </svg>
                     </button>-->
-                    
+
                </div>
           </div>
           <div class="recipe">
-               
+
                <!-- <figure class="recipe__fig">
                     <img src="./img/test-1.jpg" alt="Tomato" class="recipe__img">
                     <h1 class="recipe__title"><span>Pasta with tomato cream sauce</span></h1>
@@ -329,9 +331,9 @@
 
           <div class="shopping">
                <h2 class="heading-2">My Shopping List</h2>
-
-               <ul class="shopping__list">
-                    <!-- <li class="shopping__item"> 
+               <div class="shopping__area">
+                    <ul class="shopping__list">
+                         <!-- <li class="shopping__item"> 
                          <div class="shopping__count">
                               <input type="number" value="500" step="100">
                               <p>g</p>
@@ -409,25 +411,34 @@
                               </svg>
                          </button>
                     </li> -->
-               </ul>
+                    </ul>
+                    <button class="btn-small recipe__btn delList" data-itemid="delButton">
+                         <svg>
+                              <use href="img/icons.svg#icon-shopping-cart"></use>
+                         </svg>
+                         <span>Clear Shopping List</span>
+                    </button>`
+               </div>
 
-              
+
+
                <div class="copyright">
                     Created by ajeet singh. Powered by
                     <a href="http://food2fork.com" target="_blank" class="link">Food2Fork.com</a>.
                </div>
 
           </div>
-        
-<!-- <div class="loader">
+
+          <!-- <div class="loader">
      <svg>
           <use href="img/icons.svg#icon-cw"></use>
      </svg>
 </div> -->
 
-     <script src="./js/bundle.js"></script>
+          <script src="./js/bundle.js"></script>
 
      </div>
-     
+
 </body>
+
 </html>

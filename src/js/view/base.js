@@ -7,7 +7,9 @@ export const elements = {
    recipe: document.querySelector('.recipe'),
    shopping__list: document.querySelector('.shopping__list'),
    likes__list: document.querySelector('.likes__list'),
-   likes__panel: document.querySelector('.likes__field')
+   likes__panel: document.querySelector('.likes__field'),
+   deleteLists: document.querySelector('.delList'),
+   shopping__area: document.querySelector('.shopping__area')
 };
 
 export const renderLoader = element => {
